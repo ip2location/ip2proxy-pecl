@@ -1,0 +1,13 @@
+// vim:ft=javascript
+
+ARG_WITH("ip2proxy", "for ip2proxy support", "yes");
+
+if (PHP_IP2PROXY == "yes") {
+	if (CHECK_LIB("IP2Proxy.lib", "ip2proxy", PHP_IP2PROXY) &&
+			CHECK_HEADER_ADD_INCLUDE("ip2proxy.h", "CFLAGS_IP2PROXY")) {
+
+		EXTENSION("ip2proxy", "ip2proxy.c");
+	} else {
+		WARNING("ip2proxy not enabled, headers or libraries not found");
+	}
+}
