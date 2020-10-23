@@ -10,7 +10,7 @@
 #include <php.h>
 
 #define PHP_IP2PROXY_EXTNAME "ip2proxy"
-#define PHP_IP2PROXY_VERSION "3.0.0"
+#define PHP_IP2PROXY_VERSION "3.0.1"
 
 PHP_MINIT_FUNCTION(ip2proxy);
 PHP_MSHUTDOWN_FUNCTION(ip2proxy);
