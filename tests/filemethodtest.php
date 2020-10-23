@@ -1,29 +1,29 @@
 
 <?php
         /*Test DB access using file mathod*/
-        ip2proxy_open('PX2.BIN');
+        ip2proxy_open('PX10.SAMPLE.BIN');
         ip2proxy_open_mem(IP2PROXY_FILE_IO);
-        echo ip2proxy_get_country_short("8.8.8.8");
+        echo ip2proxy_get_country_short("1.0.0.8");
         echo "\n";
-        echo ip2proxy_get_country_long("8.8.8.8");
+        echo ip2proxy_get_country_long("1.0.0.8");
         echo "\n";
-        echo ip2proxy_get_region("8.8.8.8");
+        echo ip2proxy_get_region("1.0.0.8");
         echo "\n";
-        echo ip2proxy_get_city("8.8.8.8");
+        echo ip2proxy_get_city("1.0.0.8");
         echo "\n";
-        echo ip2proxy_get_isp("8.8.8.8");
+        echo ip2proxy_get_isp("1.0.0.8");
         echo "\n";
-        echo ip2proxy_get_domain("8.8.8.8");
+        echo ip2proxy_get_domain("1.0.0.8");
         echo "\n";
-        echo ip2proxy_get_usage_type("8.8.8.8");
+        echo ip2proxy_get_usage_type("1.0.0.8");
         echo "\n";
-		echo ip2proxy_get_asn("8.8.8.8");
+		echo ip2proxy_get_asn("1.0.0.8");
         echo "\n";
-		echo ip2proxy_get_as("8.8.8.8");
+		echo ip2proxy_get_as("1.0.0.8");
         echo "\n";
-		echo ip2proxy_get_last_seen("8.8.8.8");
+		echo ip2proxy_get_last_seen("1.0.0.8");
         echo "\n";
-		echo ip2proxy_get_threat("8.8.8.8");
+		echo ip2proxy_get_threat("1.0.0.8");
         echo "\n";
         echo ip2proxy_close();
 ?>
