@@ -1,5 +1,5 @@
 # IP2Proxy PECL Extension
-This PECL extension allows you to  detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat and proxy type information using IP2Proxy binary database.
+This PECL extension allows you to  detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat, proxy type and provider information using IP2Proxy binary database.
 
 To compile it, you will need to have the IP2Proxy C library installed.
 
@@ -22,7 +22,7 @@ To compile it, you will need to have the IP2Proxy C library installed.
    make install
    ```
 
-   
+
 ### Install PECL extension (on Linux/Unix)
 1. Decompress the archive.
 
@@ -35,9 +35,9 @@ To compile it, you will need to have the IP2Proxy C library installed.
    make
    make install
    ```
-   
 
-   
+
+
 3. A successful install will create **modules/ip2proxy.so** and put it into the PHP extensions directory.
 
 4. Open the php.ini file, and add an extension=ip2proxy.so line.
@@ -58,12 +58,12 @@ http://www.php.net/manual/en/install.pecl.php
 
 * Download commerce IP2Proxy databases at [https://www.ip2location.com](https://www.ip2location.com/database/ip2proxy)
 
-  
+
 
 # IPv4 BIN vs IPv6 BIN
 * Use the IPv4 BIN file if you just need to query IPv4 addresses.
 * Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
 
 # Support
-Email: support@ip2location.com.  
+Email: support@ip2location.com.
 URL: [http://www.ip2location.com](http://www.ip2location.com)

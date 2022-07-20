@@ -10,11 +10,11 @@
   <email>chrislim2888@yahoo.com</email>
   <active>yes</active>
  </lead>
- <date>2020-10-23</date>
- <time>08:22:00</time>
+ <date>2022-07-20</date>
+ <time>07:33:00</time>
  <version>
-  <release>3.0.1</release>
-  <api>3.0.1</api>
+  <release>3.0.2</release>
+  <api>3.0.2</api>
  </version>
  <stability>
   <release>stable</release>
@@ -32,7 +32,7 @@ fix description and files
    <file name="test/filemethodtest.php" role="test" />
    <file name="test/shm.phpt" role="test" />
    <file name="test/shmmethodtest.php" role="test" />
-   <file name="test/PX10.SAMPLE.BIN" role="test" />
+   <file name="test/PX11.SAMPLE.BIN" role="test" />
    <file name="config.m4" role="src" />
    <file name="config.w32" role="src" />
    <file name="ip2proxy.c" role="src" />
@@ -54,6 +54,21 @@ fix description and files
  <providesextension>ip2proxy</providesextension>
  <extsrcrelease />
  <changelog>
+ <release>
+   <version>
+    <release>3.0.2</release>
+    <api>3.0.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-07-22</date>
+   <license uri="http://www.php.net/license">PHP License</license>
+   <notes>
+   Update to match IP2Proxy C library changes
+   </notes>
+  </release>
   <release>
    <version>
     <release>3.0.1</release>

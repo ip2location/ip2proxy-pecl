@@ -24,6 +24,8 @@
         echo "\n";
 		echo ip2proxy_get_threat("1.0.0.8");
         echo "\n";
+		echo ip2proxy_get_provider("1.0.0.8");
+        echo "\n";
         echo ip2proxy_close();
 ?>
 
