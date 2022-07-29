@@ -10,8 +10,8 @@
   <email>chrislim2888@yahoo.com</email>
   <active>yes</active>
  </lead>
- <date>2022-07-20</date>
- <time>07:33:00</time>
+ <date>2022-07-29</date>
+ <time>15:00:00</time>
  <version>
   <release>3.0.2</release>
   <api>3.0.2</api>
@@ -26,13 +26,13 @@ fix description and files
  </notes>
  <contents>
   <dir name="/">
-   <file name="test/cache.phpt" role="test" />
-   <file name="test/cachemethodtest.php" role="test" />
-   <file name="test/file.phpt" role="test" />
-   <file name="test/filemethodtest.php" role="test" />
-   <file name="test/shm.phpt" role="test" />
-   <file name="test/shmmethodtest.php" role="test" />
-   <file name="test/PX11.SAMPLE.BIN" role="test" />
+   <file name="tests/cache.phpt" role="test" />
+   <file name="tests/cachemethodtest.php" role="test" />
+   <file name="tests/file.phpt" role="test" />
+   <file name="tests/filemethodtest.php" role="test" />
+   <file name="tests/shm.phpt" role="test" />
+   <file name="tests/shmmethodtest.php" role="test" />
+   <file name="tests/PX11.SAMPLE.BIN" role="test" />
    <file name="config.m4" role="src" />
    <file name="config.w32" role="src" />
    <file name="ip2proxy.c" role="src" />
