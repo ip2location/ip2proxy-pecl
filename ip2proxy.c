@@ -485,7 +485,7 @@ PHP_FUNCTION(ip2proxy_get_fraud_score)
 		return;
 	}
 	record = IP2Proxy_get_fraud_score(IP2PROXY_G(ip2proxy_ptr), ip_address);
-	ret = record->provider;
+	ret = record->fraud_score;
 
 #if PHP_MAJOR_VERSION >= 7
 	RETVAL_STRING(ret);

@@ -1,6 +1,6 @@
 <?php
         /*Test DB access using cache mathod*/
-        ip2proxy_open('PX10.SAMPLE.BIN');
+        ip2proxy_open('PX12.SAMPLE.BIN');
         ip2proxy_open_mem(IP2PROXY_CACHE_MEMORY);
         echo ip2proxy_get_country_short("1.0.0.8");
         echo "\n";
@@ -25,6 +25,8 @@
 		echo ip2proxy_get_threat("1.0.0.8");
         echo "\n";
 		echo ip2proxy_get_provider("1.0.0.8");
+        echo "\n";
+		echo ip2proxy_get_fraud_score("1.0.0.8");
         echo "\n";
         echo ip2proxy_close();
 ?>

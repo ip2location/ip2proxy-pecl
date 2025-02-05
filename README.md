@@ -49,7 +49,7 @@ To compile it, you will need to have the IP2Proxy C library installed.
 
 
 For details installation instructions for PHP PECL extensions, please see:
-http://www.php.net/manual/en/install.pecl.php
+https://www.php.net/manual/en/install.pecl.php
 
 
 

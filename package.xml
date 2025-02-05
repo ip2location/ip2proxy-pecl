@@ -5,12 +5,12 @@
  <summary>Get proxy information of an IP address</summary>
  <description>This PECL extension allows you to detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat, proxy type, provider and fraud score information using IP2Proxy binary database.</description>
  <lead>
- <name>Chris Lim</name>
+ <name>IP2Location</name>
   <user>ip2location</user>
-  <email>chrislim2888@yahoo.com</email>
+  <email>support@ip2location.com</email>
   <active>yes</active>
  </lead>
- <date>2022-08-02</date>
+ <date>2025-02-06</date>
  <time>08:00:00</time>
  <version>
   <release>3.1.0</release>
@@ -22,7 +22,7 @@
  </stability>
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
- Fixed wrong ip2proxy.c file.
+ Added ip2proxy_get_fraud_score function.
  </notes>
  <contents>
   <dir name="/">
@@ -32,7 +32,7 @@
    <file name="tests/filemethodtest.php" role="test" />
    <file name="tests/shm.phpt" role="test" />
    <file name="tests/shmmethodtest.php" role="test" />
-   <file name="tests/PX11.SAMPLE.BIN" role="test" />
+   <file name="tests/PX12.SAMPLE.BIN" role="test" />
    <file name="config.m4" role="src" />
    <file name="config.w32" role="src" />
    <file name="ip2proxy.c" role="src" />
@@ -55,64 +55,6 @@
  <extsrcrelease />
  <changelog>
  <release>
-   <version>
-    <release>3.0.3</release>
-    <api>3.0.3</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2022-08-02</date>
-   <license uri="http://www.php.net/license">PHP License</license>
-   <notes>
-   Fixed wrong ip2proxy.c file.
-   </notes>
-  </release>
- <release>
-   <version>
-    <release>3.0.2</release>
-    <api>3.0.2</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2022-07-22</date>
-   <license uri="http://www.php.net/license">PHP License</license>
-   <notes>
-   Update to match IP2Proxy C library changes
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>3.0.1</release>
-    <api>3.0.1</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2020-10-23</date>
-   <license uri="http://www.php.net/license">PHP License</license>
-   <notes>
-   fix description and files
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>3.0.0</release>
-    <api>3.0.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2020-10-22</date>
-   <license uri="http://www.php.net/license">PHP License</license>
-   <notes>
-   first release
-   </notes>
   </release>
  </changelog>
 </package>
