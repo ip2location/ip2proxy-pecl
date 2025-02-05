@@ -3,7 +3,7 @@
  <name>ip2proxy</name>
  <channel>pecl.php.net</channel>
  <summary>Get proxy information of an IP address</summary>
- <description>This PECL extension allows you to detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat and proxy type information using IP2Proxy binary database.</description>
+ <description>This PECL extension allows you to detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat, proxy type, provider and fraud score information using IP2Proxy binary database.</description>
  <lead>
  <name>Chris Lim</name>
   <user>ip2location</user>
@@ -13,8 +13,8 @@
  <date>2022-08-02</date>
  <time>08:00:00</time>
  <version>
-  <release>3.0.3</release>
-  <api>3.0.3</api>
+  <release>3.1.0</release>
+  <api>3.1.0</api>
  </version>
  <stability>
   <release>stable</release>

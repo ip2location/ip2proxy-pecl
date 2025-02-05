@@ -10,7 +10,7 @@
 #include <php.h>
 
 #define PHP_IP2PROXY_EXTNAME "ip2proxy"
-#define PHP_IP2PROXY_VERSION "3.0.3"
+#define PHP_IP2PROXY_VERSION "3.1.0"
 
 PHP_MINIT_FUNCTION(ip2proxy);
 PHP_MSHUTDOWN_FUNCTION(ip2proxy);
@@ -33,6 +33,7 @@ PHP_FUNCTION(ip2proxy_get_as);
 PHP_FUNCTION(ip2proxy_get_last_seen);
 PHP_FUNCTION(ip2proxy_get_threat);
 PHP_FUNCTION(ip2proxy_get_provider);
+PHP_FUNCTION(ip2proxy_get_fraud_score);
 PHP_FUNCTION(ip2proxy_get_all);
 PHP_FUNCTION(ip2proxy_close);
 PHP_FUNCTION(ip2proxy_delete_shm);
@@ -48,4 +49,4 @@ ZEND_END_MODULE_GLOBALS(ip2proxy)
 #endif
 
 
-#endif 
+#endif

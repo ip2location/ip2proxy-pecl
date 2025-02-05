@@ -47,6 +47,7 @@ static zend_function_entry ip2proxy_functions_entry[] = {
 	PHP_FE(ip2proxy_get_last_seen, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_threat, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_provider, ip2proxy_ip_address)
+	PHP_FE(ip2proxy_get_fraud_score, ip2proxy_ip_address
 	PHP_FE(ip2proxy_get_all, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_close, ip2proxy_void)
 	PHP_FE(ip2proxy_delete_shm, ip2proxy_void)
@@ -64,9 +65,9 @@ zend_module_entry ip2proxy_module_entry = {
 	ip2proxy_functions_entry,
 	PHP_MINIT(ip2proxy),
 	PHP_MSHUTDOWN(ip2proxy),
-	NULL, 
-	NULL, 
-	PHP_MINFO(ip2proxy), 
+	NULL,
+	NULL,
+	PHP_MINFO(ip2proxy),
 	PHP_IP2PROXY_VERSION,
 	STANDARD_MODULE_PROPERTIES
 };
@@ -76,7 +77,7 @@ ZEND_GET_MODULE(ip2proxy)
 #endif
 
 	/* {{{ php_ip2proxy_init_globals
-	 *  */ 
+	 *  */
 static void php_ip2proxy_init_globals(zend_ip2proxy_globals *ip2proxy_globals)
 {
 	ip2proxy_globals->ip2proxy_ptr = NULL;
@@ -96,7 +97,7 @@ PHP_MINIT_FUNCTION(ip2proxy)
 	ZEND_INIT_MODULE_GLOBALS(ip2proxy, php_ip2proxy_init_globals, NULL);
 
 	/* For memory access type constants */
-	REGISTER_LONG_CONSTANT("IP2PROXY_FILE_IO", IP2PROXY_FILE_IO, CONST_CS | CONST_PERSISTENT); 
+	REGISTER_LONG_CONSTANT("IP2PROXY_FILE_IO", IP2PROXY_FILE_IO, CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("IP2PROXY_CACHE_MEMORY", IP2PROXY_CACHE_MEMORY, CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("IP2PROXY_SHARED_MEMORY", IP2PROXY_SHARED_MEMORY, CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("IP2PROXY_RECORD", IP2PROXY_RECORD, CONST_CS | CONST_PERSISTENT);
@@ -144,7 +145,7 @@ PHP_FUNCTION(ip2proxy_open)
 {
 	char * file_path = NULL;
 	size_t path_len;
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &file_path, &path_len) == FAILURE) { 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &file_path, &path_len) == FAILURE) {
 		return;
 	}
 	if (IP2PROXY_G(ip2proxy_ptr)) {
@@ -152,7 +153,7 @@ PHP_FUNCTION(ip2proxy_open)
 	}
 	IP2PROXY_G(ip2proxy_ptr) = IP2Proxy_open(file_path);
 	if (IP2PROXY_G(ip2proxy_ptr)) {
-		RETURN_TRUE; 
+		RETURN_TRUE;
 	} else {
 		RETURN_FALSE;
 	}
@@ -164,7 +165,7 @@ PHP_FUNCTION(ip2proxy_open)
 PHP_FUNCTION(ip2proxy_open_mem)
 {
 	long method;
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &method) == FAILURE) { 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &method) == FAILURE) {
 		return;
 	}
 	/*Shared memory method is not supported*/
@@ -192,7 +193,7 @@ PHP_FUNCTION(ip2proxy_get_country_short)
 
 	PHP_IP2PROXY_DB_CHECK;
 
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) { 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) {
 		return;
 	}
 	record = IP2Proxy_get_country_short(IP2PROXY_G(ip2proxy_ptr), ip_address);
@@ -205,7 +206,7 @@ PHP_FUNCTION(ip2proxy_get_country_short)
 }
 /* }}} */
 
-/* {{{ ip2proxy_get_country_long("ip_address") 
+/* {{{ ip2proxy_get_country_long("ip_address")
  * Returns ip address's country in long */
 PHP_FUNCTION(ip2proxy_get_country_long)
 {
@@ -215,7 +216,7 @@ PHP_FUNCTION(ip2proxy_get_country_long)
 
 	PHP_IP2PROXY_DB_CHECK;
 
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) { 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) {
 		return;
 	}
 	record = IP2Proxy_get_country_long(IP2PROXY_G(ip2proxy_ptr), ip_address);
@@ -228,7 +229,7 @@ PHP_FUNCTION(ip2proxy_get_country_long)
 }
 /* }}} */
 
-/* {{{ ip2proxy_get_region("ip_address") 
+/* {{{ ip2proxy_get_region("ip_address")
  * Returns ip address's region*/
 PHP_FUNCTION(ip2proxy_get_region)
 {
@@ -238,7 +239,7 @@ PHP_FUNCTION(ip2proxy_get_region)
 
 	PHP_IP2PROXY_DB_CHECK;
 
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) { 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) {
 		return;
 	}
 	record = IP2Proxy_get_region(IP2PROXY_G(ip2proxy_ptr), ip_address);
@@ -251,7 +252,7 @@ PHP_FUNCTION(ip2proxy_get_region)
 }
 /* }}} */
 
-/* {{{ ip2proxy_get_city("ip_address") 
+/* {{{ ip2proxy_get_city("ip_address")
  * Returns ip address's city*/
 PHP_FUNCTION(ip2proxy_get_city)
 {
@@ -274,7 +275,7 @@ PHP_FUNCTION(ip2proxy_get_city)
 }
 /* }}} */
 
-/* {{{ ip2proxy_get_("ip_address") 
+/* {{{ ip2proxy_get_("ip_address")
  * Returns ip address's isp information */
 PHP_FUNCTION(ip2proxy_get_isp)
 {
@@ -297,7 +298,7 @@ PHP_FUNCTION(ip2proxy_get_isp)
 }
 /* }}} */
 
-/* {{{ ip2proxy_get_domain("ip_address") 
+/* {{{ ip2proxy_get_domain("ip_address")
  * Returns ip address's domain information */
 PHP_FUNCTION(ip2proxy_get_domain)
 {
@@ -470,6 +471,31 @@ PHP_FUNCTION(ip2proxy_get_provider)
 }
 /* }}} */
 
+/* {{{ ip2proxy_get_fraud_score("ip_address")
+ * Returns ip address's fraud score */
+PHP_FUNCTION(ip2proxy_get_fraud_score)
+{
+	char *ip_address, *ret;
+	size_t ip_len;
+	IP2ProxyRecord *record = NULL;
+
+	PHP_IP2PROXY_DB_CHECK;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) {
+		return;
+	}
+	record = IP2Proxy_get_fraud_score(IP2PROXY_G(ip2proxy_ptr), ip_address);
+	ret = record->provider;
+
+#if PHP_MAJOR_VERSION >= 7
+	RETVAL_STRING(ret);
+#else
+	RETVAL_STRING(ret, 1);
+#endif
+	IP2Proxy_free_record(record);
+}
+/* }}} */
+
 /* {{{ ip2proxy_get_all("ip_address")
  *  * Returns the record information */
 PHP_FUNCTION(ip2proxy_get_all)
@@ -498,6 +524,7 @@ PHP_FUNCTION(ip2proxy_get_all)
 	add_assoc_string(return_value, "last_seen", record->last_seen);
 	add_assoc_string(return_value, "threat", record->threat);
 	add_assoc_string(return_value, "provider", record->provider);
+	add_assoc_string(return_value, "fraud_score", record->fraud_score);
 #else
 	add_assoc_string(return_value, "country_short", record->country_short, 1);
 	add_assoc_string(return_value, "country_long", record->country_long, 1);
@@ -511,6 +538,7 @@ PHP_FUNCTION(ip2proxy_get_all)
 	add_assoc_string(return_value, "last_seen", record->last_seen, 1);
 	add_assoc_string(return_value, "threat", record->threat, 1);
 	add_assoc_string(return_value, "provider", record->provider, 1);
+	add_assoc_string(return_value, "fraud_score", record->fraud_score, 1);
 #endif
 	IP2Proxy_free_record(record);
 }
@@ -521,7 +549,7 @@ PHP_FUNCTION(ip2proxy_get_all)
  * Returns the record information */
 PHP_FUNCTION(ip2proxy_close)
 {
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "") != SUCCESS) { 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "") != SUCCESS) {
 		return;
 	}
 	if (IP2PROXY_G(ip2proxy_ptr)) {
