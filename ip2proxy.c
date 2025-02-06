@@ -47,7 +47,7 @@ static zend_function_entry ip2proxy_functions_entry[] = {
 	PHP_FE(ip2proxy_get_last_seen, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_threat, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_provider, ip2proxy_ip_address)
-	PHP_FE(ip2proxy_get_fraud_score, ip2proxy_ip_address
+	PHP_FE(ip2proxy_get_fraud_score, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_all, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_close, ip2proxy_void)
 	PHP_FE(ip2proxy_delete_shm, ip2proxy_void)
