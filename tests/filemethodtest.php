@@ -23,6 +23,8 @@
         echo "\n";
 		echo ip2proxy_get_last_seen("23.83.130.186");
         echo "\n";
+        echo ip2proxy_get_proxy_type("23.83.130.186");
+        echo "\n";
 		echo ip2proxy_get_threat("23.83.130.186");
         echo "\n";
 		echo ip2proxy_get_provider("23.83.130.186");

@@ -1,60 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.8.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
- <name>ip2proxy</name>
- <channel>pecl.php.net</channel>
- <summary>Get proxy information of an IP address</summary>
- <description>This PECL extension allows you to detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat, proxy type, provider and fraud score information using IP2Proxy binary database.</description>
- <lead>
- <name>IP2Location</name>
-  <user>ip2location</user>
-  <email>support@ip2location.com</email>
-  <active>yes</active>
- </lead>
- <date>2025-02-06</date>
- <time>08:00:00</time>
- <version>
-  <release>3.1.0</release>
-  <api>3.1.0</api>
- </version>
- <stability>
-  <release>stable</release>
-  <api>stable</api>
- </stability>
- <license uri="http://www.php.net/license">PHP License</license>
- <notes>
- Added ip2proxy_get_fraud_score function.
- </notes>
- <contents>
-  <dir name="/">
-   <file name="tests/cache.phpt" role="test" />
-   <file name="tests/cachemethodtest.php" role="test" />
-   <file name="tests/file.phpt" role="test" />
-   <file name="tests/filemethodtest.php" role="test" />
-   <file name="tests/shm.phpt" role="test" />
-   <file name="tests/shmmethodtest.php" role="test" />
-   <file name="tests/PX12.SAMPLE.BIN" role="test" />
-   <file name="config.m4" role="src" />
-   <file name="config.w32" role="src" />
-   <file name="ip2proxy.c" role="src" />
-   <file name="LICENSE" role="doc" />
-   <file name="php_ip2proxy.h" role="src" />
-   <file name="README.md" role="doc" />
-  </dir>
- </contents>
- <dependencies>
-  <required>
-   <php>
-    <min>5</min>
-   </php>
-   <pearinstaller>
-    <min>1.4.0b1</min>
-   </pearinstaller>
-  </required>
- </dependencies>
- <providesextension>ip2proxy</providesextension>
- <extsrcrelease />
- <changelog>
- <release>
-  </release>
- </changelog>
+<package packagerversion="1.8.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0"
+    xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd
+                        http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+    <name>ip2proxy</name>
+    <channel>pecl.php.net</channel>
+    <summary>Get proxy information of an IP address</summary>
+    <description>This PECL extension allows you to detect proxy servers with country, region, city, ISP, domain, usage type, ASN, security threat, proxy type, provider and fraud score information using IP2Proxy binary database.</description>
+    <lead>
+        <name>IP2Location</name>
+        <user>ip2location</user>
+        <email>support@ip2location.com</email>
+        <active>yes</active>
+    </lead>
+    <date>2025-09-09</date>
+    <time>08:00:00</time>
+    <version>
+        <release>3.2.0</release>
+        <api>3.2.0</api>
+    </version>
+    <stability>
+        <release>stable</release>
+        <api>stable</api>
+    </stability>
+    <license uri="http://www.php.net/license">PHP License</license>
+    <notes>Added ip2proxy_get_proxy_type function.</notes>
+    <contents>
+        <dir name="/">
+            <file name="tests/cache.phpt" role="test" />
+            <file name="tests/cachemethodtest.php" role="test" />
+            <file name="tests/file.phpt" role="test" />
+            <file name="tests/filemethodtest.php" role="test" />
+            <file name="tests/shm.phpt" role="test" />
+            <file name="tests/shmmethodtest.php" role="test" />
+            <file name="tests/PX12.SAMPLE.BIN" role="test" />
+            <file name="config.m4" role="src" />
+            <file name="config.w32" role="src" />
+            <file name="ip2proxy.c" role="src" />
+            <file name="LICENSE" role="doc" />
+            <file name="php_ip2proxy.h" role="src" />
+            <file name="README.md" role="doc" />
+        </dir>
+    </contents>
+    <dependencies>
+        <required>
+            <php>
+                <min>5</min>
+            </php>
+            <pearinstaller>
+                <min>1.4.0b1</min>
+            </pearinstaller>
+        </required>
+    </dependencies>
+    <providesextension>ip2proxy</providesextension>
+    <extsrcrelease />
+    <changelog>
+        <release></release>
+    </changelog>
 </package>

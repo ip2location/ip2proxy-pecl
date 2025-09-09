@@ -45,6 +45,7 @@ static zend_function_entry ip2proxy_functions_entry[] = {
 	PHP_FE(ip2proxy_get_asn, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_as, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_last_seen, ip2proxy_ip_address)
+	PHP_FE(ip2proxy_get_proxy_type, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_threat, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_provider, ip2proxy_ip_address)
 	PHP_FE(ip2proxy_get_fraud_score, ip2proxy_ip_address)
@@ -421,6 +422,31 @@ PHP_FUNCTION(ip2proxy_get_last_seen)
 }
 /* }}} */
 
+/* {{{ ip2proxy_get_proxy_type("ip_address")
+ * Returns ip address's proxy type information */
+PHP_FUNCTION(ip2proxy_get_proxy_type)
+{
+	char *ip_address, *ret;
+	size_t ip_len;
+	IP2ProxyRecord *record = NULL;
+
+	PHP_IP2PROXY_DB_CHECK;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &ip_address, &ip_len) == FAILURE) {
+		return;
+	}
+	record = IP2Proxy_get_proxy_type(IP2PROXY_G(ip2proxy_ptr), ip_address);
+	ret = record->proxy_type;
+
+#if PHP_MAJOR_VERSION >= 7
+	RETVAL_STRING(ret);
+#else
+	RETVAL_STRING(ret, 1);
+#endif
+	IP2Proxy_free_record(record);
+}
+/* }}} */
+
 /* {{{ ip2proxy_get_threat("ip_address")
  * Returns ip address's security threat information */
 PHP_FUNCTION(ip2proxy_get_threat)
@@ -522,6 +548,7 @@ PHP_FUNCTION(ip2proxy_get_all)
 	add_assoc_string(return_value, "asn", record->asn);
 	add_assoc_string(return_value, "as", record->as_);
 	add_assoc_string(return_value, "last_seen", record->last_seen);
+	add_assoc_string(return_value, "proxy_type", record->proxy_type);
 	add_assoc_string(return_value, "threat", record->threat);
 	add_assoc_string(return_value, "provider", record->provider);
 	add_assoc_string(return_value, "fraud_score", record->fraud_score);
@@ -536,6 +563,7 @@ PHP_FUNCTION(ip2proxy_get_all)
 	add_assoc_string(return_value, "asn", record->asn, 1);
 	add_assoc_string(return_value, "as", record->as_, 1);
 	add_assoc_string(return_value, "last_seen", record->last_seen, 1);
+	add_assoc_string(return_value, "proxy_type", record->proxy_type, 1);
 	add_assoc_string(return_value, "threat", record->threat, 1);
 	add_assoc_string(return_value, "provider", record->provider, 1);
 	add_assoc_string(return_value, "fraud_score", record->fraud_score, 1);
