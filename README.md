@@ -53,7 +53,16 @@ https://www.php.net/manual/en/install.pecl.php
 
 
 
+### Install Using PIE (PHP Installer for Extensions)
+
+```
+pie install ip2location/ip2proxy-pie
+```
+
+
+
 # Sample BIN Databases
+
 * Download free IP2Proxy LITE databases at [https://lite.ip2location.com](https://lite.ip2location.com/ip2proxy-lite)
 
 * Download commerce IP2Proxy databases at [https://www.ip2location.com](https://www.ip2location.com/database/ip2proxy)
